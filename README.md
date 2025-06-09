@@ -1,0 +1,2 @@
+# go-kim
+Go coaching.
