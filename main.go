@@ -10,5 +10,11 @@ func main() {
 	log.Printf("Hello world started...")
 	defer log.Printf("Hello world finished.")
 
-	types.Test()
+	//types.Test2()
+	//
+	//types.GlobalStaticInt = 97
+	//types.Test()
+	//types.Test2()
+
+	types.Test3()
 }

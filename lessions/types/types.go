@@ -1,8 +1,14 @@
 package types
 
 import (
+	"errors"
 	"fmt"
 	"github.com/dezi/go-kim/utils/log"
+)
+
+var (
+	localStaticInt  int
+	GlobalStaticInt int = 12
 )
 
 type OurTypes struct {
@@ -73,4 +79,45 @@ func Test() {
 	}
 
 	log.Printf("err=%v parsedInt=%d", err, parsedInt)
+
+	var int1 = 17
+	var int2 = 23
+
+	CallBy(int1, &int2)
+
+	log.Printf("int1=%d int2=%d", int1, int2)
+
+	res, err := Divide(12, 3)
+	if err != nil {
+		log.Cerror(err)
+		return
+	}
+
+	log.Printf("res=%d", res)
+
+	localStaticInt = res
+	GlobalStaticInt = res
+}
+
+func Test2() {
+	log.Printf("Local Static int=%d", localStaticInt)
+	log.Printf("Global Static int=%d", GlobalStaticInt)
+}
+
+func CallBy(value int, reference *int) {
+	*reference = value
+	value = value * 2
+}
+
+func Divide(value1, value2 int) (res int, err error) {
+
+	if value2 == 0 {
+		err = errors.New("divide by zero")
+		log.Cerror(err)
+		return
+	}
+
+	res = value1 / value2
+
+	return
 }
