@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dezi/go-kim/lessions/types"
+	"github.com/dezi/go-kim/lessions/objects"
 	"github.com/dezi/go-kim/utils/log"
 )
 
@@ -16,5 +16,13 @@ func main() {
 	//types.Test()
 	//types.Test2()
 
-	types.Test3()
+	//types.Test3()
+
+	//types.Test4()
+	//types.Test4()
+	//types.Test4()
+
+	//types.Test5()
+
+	objects.Test6()
 }
