@@ -1,12 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"github.com/dezi/go-kim/lessions/types"
+	"github.com/dezi/go-kim/utils/log"
+)
 
 func main() {
-	fmt.Println("Hello world...")
-	fmt.Println("Hello world...")
-	fmt.Println("Hello world...")
-	fmt.Println("Hello world...")
-	fmt.Println("Hello world...")
-	fmt.Println("Hello world...")
+
+	log.Printf("Hello world started...")
+	defer log.Printf("Hello world finished.")
+
+	types.Test()
 }
