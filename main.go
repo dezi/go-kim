@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dezi/go-kim/lessions/gosubs"
+	"github.com/dezi/go-kim/lessions/regression"
 	"github.com/dezi/go-kim/utils/log"
 )
 
@@ -28,6 +28,8 @@ func main() {
 
 	//marshal.Test9()
 
-	gosubs.Test10()
+	//gosubs.Test10()
+
+	regression.Regress()
 
 }
