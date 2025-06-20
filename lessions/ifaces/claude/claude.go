@@ -1,7 +1,6 @@
 package claude
 
 import (
-	"github.com/dezi/go-kim/utils/log"
 	"math/rand"
 	"time"
 )
@@ -45,7 +44,7 @@ func (ai *Claude) GetSystemPrompt() (systemPrompt string) {
 
 func (ai *Claude) EvalDat(userPrompt string) (ok bool, err error) {
 
-	log.Printf("UserPrompt=%s", userPrompt)
+	//log.Printf("UserPrompt=%s", userPrompt)
 
 	time.Sleep(time.Second * time.Duration(1+rand.Intn(4)))
 

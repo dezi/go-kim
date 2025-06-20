@@ -4,6 +4,7 @@ import (
 	"github.com/dezi/go-kim/lessions/ifaces/claude"
 	"github.com/dezi/go-kim/lessions/ifaces/openai"
 	"github.com/dezi/go-kim/utils/log"
+	"sync"
 )
 
 func TestIFace() {

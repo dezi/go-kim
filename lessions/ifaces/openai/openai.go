@@ -1,7 +1,6 @@
 package openai
 
 import (
-	"github.com/dezi/go-kim/utils/log"
 	"math/rand"
 	"time"
 )
@@ -45,7 +44,7 @@ func (ai *OpenAi) GetSystemPrompt() (systemPrompt string) {
 
 func (ai *OpenAi) EvalDat(userPrompt string) (ok bool, err error) {
 
-	log.Printf("UserPrompt=%s", userPrompt)
+	//log.Printf("UserPrompt=%s", userPrompt)
 
 	time.Sleep(time.Second * time.Duration(1+rand.Intn(4)))
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dezi/go-kim/lessions/ifaces"
+	"github.com/dezi/go-kim/lessions/kimai"
 	"github.com/dezi/go-kim/utils/log"
 )
 
@@ -38,5 +38,7 @@ func main() {
 
 	//channels.TestChan()
 
-	ifaces.TestIFace()
+	//ifaces.TestIFace()
+
+	kimai.DoKimAI()
 }
