@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dezi/go-kim/lessions/regression"
+	"github.com/dezi/go-kim/lessions/channels"
 	"github.com/dezi/go-kim/utils/log"
 )
 
@@ -32,6 +32,10 @@ func main() {
 
 	//gosubs.Test10()
 
-	regression.Regress()
+	//regression.Regress()
+
+	//maps.TestMaps()
+
+	channels.TestChan()
 
 }
