@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dezi/go-kim/lessions/kimai"
+	"github.com/dezi/go-kim/lessions/octal"
 	"github.com/dezi/go-kim/utils/log"
 )
 
@@ -40,5 +40,7 @@ func main() {
 
 	//ifaces.TestIFace()
 
-	kimai.DoKimAI()
+	//kimai.DoKimAI()
+
+	octal.TestOctal()
 }
