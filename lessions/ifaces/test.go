@@ -11,24 +11,37 @@ func TestIFace() {
 	openAiInstance := openai.CreateInstance()
 	claudeInstance := claude.CreateInstance()
 
+	wg := sync.WaitGroup{}
+
 	userPrompt := "Ich nix wiss"
 
-	var ok bool
-	var err error
+	wg.Add(1) // important: before go function!!!
+	go func(userPrompt string) {
+		defer wg.Done()
 
-	ok, err = openAiInstance.EvalDat(userPrompt)
-	if err != nil {
-		log.Cerror(err)
-		return
-	}
+		ok, err := openAiInstance.EvalDat(userPrompt)
+		if err != nil {
+			log.Cerror(err)
+			return
+		}
 
-	log.Printf("OpenAI Userprompt=%s ok=%v", userPrompt, ok)
+		log.Printf("OpenAI Userprompt=%s ok=%v", userPrompt, ok)
 
-	ok, err = claudeInstance.EvalDat(userPrompt)
-	if err != nil {
-		log.Cerror(err)
-		return
-	}
+	}(userPrompt)
 
-	log.Printf("Claude Userprompt=%s ok=%v", userPrompt, ok)
+	wg.Add(1) // important: before go function!!!
+	go func(userPrompt string) {
+		defer wg.Done()
+
+		ok, err := claudeInstance.EvalDat(userPrompt)
+		if err != nil {
+			log.Cerror(err)
+			return
+		}
+
+		log.Printf("Claude Userprompt=%s ok=%v", userPrompt, ok)
+
+	}(userPrompt)
+
+	wg.Wait()
 }
